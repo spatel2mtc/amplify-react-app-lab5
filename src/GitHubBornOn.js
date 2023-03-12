@@ -4,24 +4,17 @@ import { API } from 'aws-amplify';
 
 export const GithubBornOn = () => {
 
-    const [loading,UpdateLoading] = useState(true);
-
-    useEffect(() => {
-        getUser()
-    });
 
     async function getUser() {
-        const data = await API.get('githubborn',`'/born'`);
-        console.log(data.born);
-        UpdateLoading(false)
+        console.log('TEST');
     }
 
     return(
         <>
-        {!loading &&
+        
 
         <h2>still loading</h2>        
-        }
+        
         
         
         </>
