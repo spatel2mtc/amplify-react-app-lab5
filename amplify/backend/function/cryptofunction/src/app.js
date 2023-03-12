@@ -47,7 +47,7 @@ app.get('/coins', function(req, res) {
   // Call API and return response
   axios.get(apiUrl)
     .then(response => {
-      res.json({  coins: response.data.data })
+      res.json({  coins: response })
     })
     .catch(err => res.json({ error: err }))
 })
