@@ -95,7 +95,7 @@ let sampleReturn = {
 
 axios.get(githubApiURL)
 .then(response => {
-  res.json({  born: response.data.data })
+  res.json({  born: response.data })
 })
 .catch(err => res.json({ error: err }))
 
