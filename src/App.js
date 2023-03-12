@@ -22,23 +22,24 @@ function updateInputValues(type, value) {
   updateInput({ ...input, [type]: value })
 }
 
+// Define function to all API
+const fetchCoins = async() =>
+  {
+  updateLoading(true);
+  const { limit, start } = input
+  const data = await API.get('cryptoapi', `/coins?limit=${limit}&start=${start}`);
+  updateCoins(data.coins);
+  updateLoading(false);
+}
+
+// Call fetchCoins function when component loads
+useEffect(() => {
+  fetchCoins()
+}, [])
+
+//
 
 
-
-  // Define function to all API
-  const fetchCoins = async() =>
-   {
-    updateLoading(true);
-    const { limit, start } = input
-    const data = await API.get('cryptoapi', `/coins?limit=${limit}&start=${start}`);
-    updateCoins(data.coins);
-    updateLoading(false);
-  }
-
-  // Call fetchCoins function when component loads
-  useEffect(() => {
-    fetchCoins()
-  }, [])
 
   return (
     <div className="App">

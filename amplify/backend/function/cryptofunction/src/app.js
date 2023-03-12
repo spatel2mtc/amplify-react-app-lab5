@@ -52,6 +52,67 @@ app.get('/coins', function(req, res) {
     .catch(err => res.json({ error: err }))
 })
 
+//Creation of a new endpoint to get born date of Github profile
+
+app.get('/born', function(req, res) {
+
+
+let githubApiURL = "https://api.github.com/users/spatel2mtc";
+let sampleReturn = {
+  "login": "spatel2mtc",
+  "id": 89953193,
+  "node_id": "MDQ6VXNlcjg5OTUzMTkz",
+  "avatar_url": "https://avatars.githubusercontent.com/u/89953193?v=4",
+  "gravatar_id": "",
+  "url": "https://api.github.com/users/spatel2mtc",
+  "html_url": "https://github.com/spatel2mtc",
+  "followers_url": "https://api.github.com/users/spatel2mtc/followers",
+  "following_url": "https://api.github.com/users/spatel2mtc/following{/other_user}",
+  "gists_url": "https://api.github.com/users/spatel2mtc/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/spatel2mtc/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/spatel2mtc/subscriptions",
+  "organizations_url": "https://api.github.com/users/spatel2mtc/orgs",
+  "repos_url": "https://api.github.com/users/spatel2mtc/repos",
+  "events_url": "https://api.github.com/users/spatel2mtc/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/spatel2mtc/received_events",
+  "type": "User",
+  "site_admin": false,
+  "name": null,
+  "company": null,
+  "blog": "",
+  "location": null,
+  "email": null,
+  "hireable": null,
+  "bio": null,
+  "twitter_username": null,
+  "public_repos": 5,
+  "public_gists": 0,
+  "followers": 0,
+  "following": 0,
+  "created_at": "2021-09-02T01:36:07Z",
+  "updated_at": "2023-03-10T01:41:09Z"
+};
+
+axios.get(githubApiURL)
+.then(response => {
+  res.json({  born: response.data.data })
+})
+.catch(err => res.json({ error: err }))
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
 app.get('/item', function(req, res) {
   // Add your code here
   res.json({success: 'get call succeed!', url: req.url});
