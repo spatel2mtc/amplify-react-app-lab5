@@ -50,7 +50,7 @@ app.get('/coins', function(req, res) {
       res.json({  coins: response })
     })
     .catch(err => res.json({ error: err }))
-})
+});
 
 //Creation of a new endpoint to get born date of Github profile
 
