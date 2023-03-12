@@ -3,15 +3,18 @@ import { API } from 'aws-amplify';
 
 
 export const GithubBornOn = () => {
-    const data = API.get('githubborn', `/born`);
-    console.log(data);
+    const [profile, updateProfile] = useState([]);
+
+
+    const getProfile = async() =>{
+       const data = await API.get('githubborn', `/born`);
+    
+      
+    }
+    
 
     return(
-        <>
-        
-
-        <h2>still loading</h2>        
-        
+        <>      
         
         
         </>
