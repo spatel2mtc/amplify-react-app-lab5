@@ -3,11 +3,8 @@ import { API } from 'aws-amplify';
 
 
 export const GithubBornOn = () => {
-
-
-    async function getUser() {
-        console.log('TEST');
-    }
+    const data = API.get('githubborn', `/born`);
+    console.log(data);
 
     return(
         <>
