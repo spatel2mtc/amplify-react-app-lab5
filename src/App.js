@@ -61,7 +61,7 @@ useEffect(() => {
         }
       
 
-      <GithubBornOn></GithubBornOn>
+      <GithubBornOn>TEST</GithubBornOn>
     </div>
   );
 }
